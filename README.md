@@ -1,11 +1,11 @@
-# hello-world-1
-just another repository
-public int doThings(String numberString) {
-  try {
-    int i = Integer.parseInt(numberString);
-  } catch(Exception e) {
-    System.out.println(e);
+Node someFunction(Node root, int key) {
+  if (root == null || root.key == key) {
+    return root;
   }
-  return i;
-}
 
+  if (root.key > key) {
+    return someFunction(root.left, key);
+  }
+
+  return someFunction(root.right, key);
+}
